@@ -8,18 +8,83 @@
 
 <ion-view>
   <ion-content class="weather-bg has-header">
-      <ion-slide-box show-pager="true">
+      <div class="row">
+          <div class="col text-right">
+              <p><small class="ft-white">2015年5月9日</small></p>
+          </div>
+      </div>
+      <ion-slide-box show-pager="false">
           <ion-slide>
               <div class="row row-center">
-                  <div class="col col-center text-center">
+                  <div class="col text-center">
                       <p>
-                          <i class="wi wi-day-lightning"></i>
+                          <i class="wi wi-day-lightning ft-white fts-5 padding-10"></i>
                       </p>
-                      <h2>-2~5</h2>
                   </div>
+              </div>
+              <div class="row">
+                  <div class="col text-center"><h1 class="ft-white padding-10">12°~25°</h1></div>
+              </div>
+          </ion-slide>
+          <ion-slide>
+              <div class="row row-center">
+                  <div class="col text-center">
+                      <p>
+                          <i class="wi wi-day-windy ft-white fts-5 padding-10"></i>
+                      </p>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col text-center"><h1 class="ft-white padding-10">15°~35°</h1></div>
+              </div>
+          </ion-slide>
+          <ion-slide>
+              <div class="row row-center">
+                  <div class="col text-center">
+                      <p>
+                          <i class="wi wi-night-snow ft-white fts-5 padding-10"></i>
+                      </p>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col text-center"><h1 class="ft-white padding-10">-3°~6°</h1></div>
               </div>
           </ion-slide>
       </ion-slide-box>
 
   </ion-content>
 </ion-view>
+<div class="bar bar-subfooter over-subFooter">
+    <div class="row">
+        <div class="col text-left padding-left-10"><h2 class="ft-white">雷阵雨</h2></div>
+        <div class="col text-right">
+            <button class="button button-clear button-icon ft-white ion-grid"></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-left padding-left-10"><p class="ft-white fts-5">25°</p></div>
+        <div class="col text-right">
+            <button class="button button-clear button-icon ion-heart ft-red"></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-left padding-left-10">
+            <h4 class="ft-white">
+                <span class="margin-10"><i class="icon ion-navigate"></i> 二级</span>
+                <span><i class="icon ion-waterdrop"></i> 80%</span>
+            </h4>
+        </div>
+        <div class="col text-right">
+            <button class="button button-clear air-bg">
+                <i class="icon ion-leaf ft-green"></i> <span class="ft-white">24 优秀</span>
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col text-left padding-left-10">
+            <p class="ft-white">
+                下午 11:15 发布
+            </p>
+        </div>
+    </div>
+</div>

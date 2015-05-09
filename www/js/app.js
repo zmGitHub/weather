@@ -75,3 +75,6 @@ angular.module('weather', ['ionic', 'weather.controllers'])
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/weather');
     }]);
+
+
+/*天气接口  http://m.weather.com.cn/atad/101251401.html*/

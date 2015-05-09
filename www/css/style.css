@@ -1,6 +1,6 @@
 /* Empty. Add your own CSS if you like */
 .weather-bg {
-    background: url(../img/fog.jpg) no-repeat center center fixed;
+    background: url(../img/bg.webp) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -8,6 +8,12 @@
     /*background: linear-gradient(45deg, #539FA2 0%, #72B1A4 33%, #C4DBB4 67%, #ABCCB1), linear-gradient(125deg, #539FA2 0%, #72B1A4 33%, #C4DBB4 67%, #ABCCB1);*/
 }
 
+.over-subFooter {
+    background-color: transparent;
+    bottom: 50px;
+    color: #FFFFFF;
+    height: auto;
+}
 
 /*让tabs 半透明*/
 .has-tabs{
@@ -56,8 +62,95 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
     background: rgba(255, 255, 255,0) !important;
 }
 
-.fog {
-    background-image: url("../img/svg/Cloud-Download.svg");
-    background-repeat: no-repeat;
-    background-size: 200px;
+.air-bg {
+    background-color: rgba(255,255,255,0.4)!important;
+    border-radius: 30px;
+    padding: 0px 9px!important;
+}
+/*定义字体颜色*/
+.ft-white {
+    color: #FFFFFF!important;
+}
+.ft-green {
+    color: #7fb80e!important;
+}
+.ft-red {
+    color: #f15b6c!important;
+}
+/*定义字体的大小*/
+.fts-1 {
+    font-size: 1em;
+}
+.fts-2 {
+    font-size: 2em;
+}
+.fts-3 {
+    font-size: 3em;
+}
+.fts-4 {
+    font-size: 4em;
+}
+.fts-5 {
+    font-size: 5em;
+}
+.fts-6 {
+    font-size: 6em;
+}
+.fts-7 {
+    font-size: 7em;
+}
+.fts-8 {
+    font-size: 8em;
+}
+.fts-9 {
+    font-size: 9em;
+}
+.fts-10 {
+    font-size: 10em;
+}
+.fts-11 {
+    font-size: 11em;
+}
+.fts-12 {
+    font-size: 12em;
+}
+.fts-13 {
+    font-size: 13em;
+}
+.fts-14 {
+    font-size: 14em;
+}
+.fts-15 {
+    font-size: 15em;
+}
+.fts-16 {
+    font-size: 16em;
+}
+.fts-17 {
+    font-size: 17em;
+}
+.fts-18 {
+    font-size: 18em;
+}
+.fts-18 {
+    font-size: 18em;
+}
+.fts-19 {
+    font-size: 19em;
+}
+.fts-20 {
+    font-size: 20em;
+}
+
+/*自定义padding*/
+.padding-10 {
+    padding: 10px;
+}
+
+.padding-left-10 {
+    padding-left: 10px!important;
+}
+/*自定义margin*/
+.margin-10 {
+    margin-right: 10px;
 }
