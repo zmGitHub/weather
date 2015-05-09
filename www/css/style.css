@@ -5,4 +5,59 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    /*background: linear-gradient(45deg, #539FA2 0%, #72B1A4 33%, #C4DBB4 67%, #ABCCB1), linear-gradient(125deg, #539FA2 0%, #72B1A4 33%, #C4DBB4 67%, #ABCCB1);*/
+}
+
+
+/*让tabs 半透明*/
+.has-tabs{
+    bottom: 0 !important;
+    padding-bottom:49px !important;
+}
+.has-tabs .scroll{
+    padding-bottom:49px !important;
+}
+.tab-item {
+    color: #fff!important;
+}
+
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
+    color: #387ef5!important;
+}
+.tabs-blur .tab-nav.tabs{
+    background-color: rgba(0,0,0,0.45) !important;
+}
+
+/*用户头像*/
+.avatar {
+    max-width: 30px;
+    max-height: 30px;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+
+/*让header-bar 半透明*/
+.scroll-content{
+    top: 0 !important;
+    bottom: 0 !important;
+}
+
+.has-header{
+    padding-top:44px !important;
+}
+
+.has-footer{
+    padding-bottom:44px !important;
+}
+
+.bar-positive{
+    background: rgba(255, 255, 255,0) !important;
+}
+
+.fog {
+    background-image: url("../img/svg/Cloud-Download.svg");
+    background-repeat: no-repeat;
+    background-size: 200px;
 }

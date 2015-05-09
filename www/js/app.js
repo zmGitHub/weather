@@ -14,7 +14,7 @@ angular.module('weather', ['ionic', 'weather.controllers'])
         });
     })
 
-    .config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+    .config(['$stateProvider', '$urlRouterProvider', '$ionicConfigProvider',function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
         $ionicConfigProvider.platform.ios.tabs.style('standard');
         $ionicConfigProvider.platform.ios.tabs.position('bottom');
         $ionicConfigProvider.platform.android.tabs.style('standard');
@@ -25,6 +25,9 @@ angular.module('weather', ['ionic', 'weather.controllers'])
         $ionicConfigProvider.platform.android.backButton.previousTitleText('').icon('ion-ios-arrow-back');
         $ionicConfigProvider.platform.ios.views.transition('ios');
         $ionicConfigProvider.platform.android.views.transition('android');
+        $ionicConfigProvider.tabs.style('standard');
+
+
         $stateProvider
             .state('app', {
                 url: "/app",
@@ -71,4 +74,4 @@ angular.module('weather', ['ionic', 'weather.controllers'])
             });
         // if none of the above states are matched, use this as the fallback
         $urlRouterProvider.otherwise('/app/weather');
-    });
+    }]);
