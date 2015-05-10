@@ -8,6 +8,35 @@
     /*background: linear-gradient(45deg, #539FA2 0%, #72B1A4 33%, #C4DBB4 67%, #ABCCB1), linear-gradient(125deg, #539FA2 0%, #72B1A4 33%, #C4DBB4 67%, #ABCCB1);*/
 }
 
+.air-bg {
+    background-color: rgba(255,255,255,0.4)!important;
+    border-radius: 30px;
+    padding: 0px 9px!important;
+}
+
+.transparent-bg {
+    background-color: transparent !important;
+}
+
+.dark-bg-3 {
+    background-color: rgba(0,0,0,0.3) !important;
+}
+
+.dark-bg-4 {
+    background-color: rgba(0,0,0,0.4) !important;
+}
+
+.toggle-border-color {
+    border-color: #080808 !important;
+}
+.weather-toggle input:checked + .track {
+    border-color: #4cd964 !important;
+    background-color: #4cd964 !important;
+}
+
+.border-color-white-1 {
+    border-color: rgba(255,255,255,0.1) !important;
+}
 .over-subFooter {
     background-color: transparent;
     bottom: 50px;
@@ -62,24 +91,51 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
     background: rgba(255, 255, 255,0) !important;
 }
 
-.air-bg {
-    background-color: rgba(255,255,255,0.4)!important;
-    border-radius: 30px;
-    padding: 0px 9px!important;
-}
+
 /*定义字体颜色*/
 .ft-white {
-    color: #FFFFFF!important;
+    color: #FFFFFF !important;
 }
 .ft-green {
-    color: #7fb80e!important;
+    color: #4cd964 !important;
 }
 .ft-red {
-    color: #f15b6c!important;
+    color: #f15b6c !important;
 }
+
+.ft-gray {
+    color: #AAAAAA !important;
+}
+
+.ft-heart {
+    color: #ea66a6 !important;
+}
+.ft-cloth {
+    color: #f7acbc !important;
+}
+.ft-sick {
+    color: #87481f !important;
+}
+.ft-x {
+    color: #6950a1 !important;
+}
+.ft-sport {
+    color: #78a355 !important;
+}
+.ft-car {
+    color: #ffe600 !important;
+}
+.ft-travel {
+    color: #009ad6 !important;
+}
+.ft-sun {
+    color: #ed1941 !important;
+
+}
+
 /*定义字体的大小*/
 .fts-1 {
-    font-size: 1em;
+    font-size: 1.5em;
 }
 .fts-2 {
     font-size: 2em;
@@ -153,4 +209,14 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 /*自定义margin*/
 .margin-10 {
     margin-right: 10px;
+}
+.margin-left-15 {
+    margin-left: 15px !important;
+}
+/*自定义 浮动*/
+.pull-left {
+   float: left !important;
+}
+.pull-right {
+    float: right !important;
 }

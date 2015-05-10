@@ -1,0 +1,170 @@
+<ion-modal-view class="weather-bg">
+    <ion-header-bar class="bar-positive">
+        <div class="buttons">
+            <button class="button button-clear"><small> <i class="ion-ios-location"></i> 深圳 </small> <i class="wi wi-day-lightning ft-white"></i> 25°</button>
+        </div>
+        <h1 class="title"></h1>
+        <div class="buttons">
+            <button class="button button-clear button-icon ion-ios-close-outline" ng-click="closeLogin()"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content class="has-header">
+        <!--未来六天天气信息-->
+
+        <div class="list card transparent-bg">
+            <div class="item border-color-white-1 dark-bg-3 ft-white item-icon-right item-divider">
+                多天预报
+                <i class="icon ion-arrow-graph-up-right"></i>
+            </div>
+            <div class="item border-color-white-1 dark-bg-3 ft-white row-no-padding">
+                <div class="row">
+                    <div class="col">
+                        <span class="pull-left ft-gray">周一</span>
+                        <small class="pull-right"><i class="wi wi-day-sleet-storm ft-green"></i> 多云转阵雨</small>
+                    </div>
+                    <div class="col margin-left-15">
+                        <span class="pull-left">12°~25°</span>
+                        <small class="pull-right">南风小于3级</small>
+                    </div>
+                </div>
+            </div>
+            <div class="item border-color-white-1 dark-bg-3 ft-white row-no-padding">
+                <div class="row">
+                    <div class="col">
+                        <span class="pull-left ft-gray">周一</span>
+                        <small class="pull-right"><i class="wi wi-day-sleet-storm ft-green"></i> 多云转阵雨</small>
+                    </div>
+                    <div class="col margin-left-15">
+                        <span class="pull-left">12°~25°</span>
+                        <small class="pull-right">南风小于3级</small>
+                    </div>
+                </div>
+            </div>
+            <div class="item border-color-white-1 dark-bg-3 ft-white row-no-padding">
+                <div class="row">
+                    <div class="col">
+                        <span class="pull-left ft-gray">周一</span>
+                        <small class="pull-right"><i class="wi wi-day-sleet-storm ft-green"></i> 多云转阵雨</small>
+                    </div>
+                    <div class="col margin-left-15">
+                        <span class="pull-left">12°~25°</span>
+                        <small class="pull-right">南风小于3级</small>
+                    </div>
+                </div>
+            </div>
+            <div class="item border-color-white-1 dark-bg-3 ft-white row-no-padding item-divider">
+                <div class="row row-center">
+                    <div class="col col-10"><i class="icon ion-stats-bars"></i></div>
+                    <div class="col col-20">
+                        <label class="toggle weather-toggle">
+                            <input type="checkbox">
+                            <div class="track dark-bg-4 toggle-border-color">
+                                <div class="handle"></div>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="col text-right">
+                        <small class="ft-gray">本数据由中国天气网提供</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--当前天气信息-->
+        <div class="list card transparent-bg">
+            <div class="item border-color-white-1 dark-bg-3 ft-white item-icon-right item-divider">
+                当前天气信息
+                <i class="icon ion-ios-analytics-outline"></i>
+            </div>
+            <!--日出-->
+            <div class="item border-color-white-1 dark-bg-3 ft-white row-no-padding">
+                <div class="row">
+                    <div class="col">
+                        <span><i class="wi wi-horizon energized"></i> 日出 05:45</span>
+                    </div>
+                    <div class="col">
+                        <span><i class="wi wi-sunset energized"></i> 日落 18:54</span>
+                    </div>
+                </div>
+            </div>
+            <!--风速-->
+            <div class="item border-color-white-1 dark-bg-3 ft-white row-no-padding">
+                <div class="row">
+                    <div class="col">
+                        <span><i class="wi wi-strong-wind positive"></i> 风速 三级</span>
+                    </div>
+                    <div class="col">
+                        <span><i class="wi wi-wind-default _0-deg calm"></i> 东北风 微风</span>
+                    </div>
+                </div>
+            </div>
+            <!--温度和湿度-->
+            <div class="item border-color-white-1 dark-bg-3 ft-white row-no-padding">
+                <div class="row">
+                    <div class="col">
+                        <span><i class="icon ion-thermometer royal"></i> 体感温度 23</span>
+                    </div>
+                    <div class="col">
+                        <span><i class="wi ion-waterdrop ft-green"></i> 湿度 85%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--生活指数-->
+        <div class="list card transparent-bg">
+            <div class="item border-color-white-1 dark-bg-3 ft-white item-icon-right item-divider">
+                生活指数
+                <i class="icon ion-happy-outline"></i>
+            </div>
+            <!--舒适度指数-->
+            <div class="item item-icon-left border-color-white-1 dark-bg-3 ft-white">
+                <i class="icon ion-ios-heart ft-heart"></i>
+                舒适度指数
+                <span class="badge ft-white">较舒适</span>
+            </div>
+            <!--穿衣指数-->
+            <div class="item item-icon-left border-color-white-1 dark-bg-3 ft-white">
+                <i class="icon ion-tshirt-outline ft-cloth"></i>
+                穿衣指数
+                <span class="badge ft-white">热</span>
+            </div>
+            <!--紫外线指数-->
+            <div class="item item-icon-left border-color-white-1 dark-bg-3 ft-white">
+                <i class="icon ion-umbrella ft-x"></i>
+                紫外线指数
+                <span class="badge ft-white">中等</span>
+            </div>
+            <!--感冒指数-->
+            <div class="item item-icon-left border-color-white-1 dark-bg-3 ft-white">
+                <i class="icon ion-medkit ft-sick"></i>
+                感冒指数
+                <span class="badge ft-white">少发</span>
+            </div>
+            <!--洗车指数-->
+            <div class="item item-icon-left border-color-white-1 dark-bg-3 ft-white">
+                <i class="icon ion-model-s ft-car"></i>
+                洗车指数
+                <span class="badge ft-white">不宜</span>
+            </div>
+            <!--旅游指数-->
+            <div class="item item-icon-left border-color-white-1 dark-bg-3 ft-white">
+                <i class="icon ion-images ft-travel"></i>
+                旅游指数
+                <span class="badge ft-white">不宜</span>
+            </div>
+            <!--晨练指数-->
+            <div class="item item-icon-left border-color-white-1 dark-bg-3 ft-white">
+                <i class="icon ion-android-walk ft-sport"></i>
+                晨练指数
+                <span class="badge ft-white">不宜</span>
+            </div>
+            <!--晾晒指数-->
+            <div class="item item-icon-left border-color-white-1 dark-bg-3 ft-white">
+                <i class="icon ion-android-sunny ft-sun"></i>
+                晾晒指数
+                <span class="badge ft-white">不宜</span>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

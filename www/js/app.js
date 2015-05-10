@@ -40,7 +40,8 @@ angular.module('weather', ['ionic', 'weather.controllers'])
                 url: "/weather",
                 views: {
                     'tab-weather': {
-                        templateUrl: "templates/weather.html"
+                        templateUrl: "templates/weather.html",
+                        controller: 'weatherCtr'
                     }
                 }
             })
