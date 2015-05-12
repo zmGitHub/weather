@@ -78,4 +78,14 @@ angular.module('weather', ['ionic', 'weather.controllers'])
     }]);
 
 
-/*天气接口  http://m.weather.com.cn/atad/101251401.html*/
+/*天气接口  http://apis.haoservice.com/weather?cityname=%E6%B7%B1%E5%9C%B3&key=4e2a4a4be57445b2973fa2a367cb8539*/
+//http://www.haoservice.com/docs/6
+/*http://www.ui.cn/detail/44449.html
+http://codepen.io/benjamingeorge/pen/QwQZqB
+
+http://codepen.io/ionic/pen/mqolp
+http://codepen.io/joaoneto/pen/BFIwq
+http://codepen.io/wattenberger/pen/VYoePW
+http://greengerong.github.io/blog/2015/05/09/qian-duan-javascriptgui-fan/
+http://codepen.io/shoowack/pen/LBsxD
+*/
