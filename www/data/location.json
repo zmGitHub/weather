@@ -1,0 +1,22 @@
+{
+  "error_code": 0,
+  "reason": "成功",
+  "result": {
+    "correctlongitude": 116.44361,
+    "correctlatitude": 39.93554,
+    "Address": "北京市东城区新中街三条东直门街道三里屯工体北里西北",
+    "province": "直辖市",
+    "city": "北京市",
+    "dist": "东城区",
+    "area": "新中街三条",
+    "town": "东直门街道",
+    "village": "三里屯",
+    "poi": "工体北里",
+    "poitype": "小区",
+    "direction": "西北",
+    "distance": 0,
+    "roadname": "春秀路",
+    "roadDirection": "西",
+    "roadDistance": 0
+  }
+}
