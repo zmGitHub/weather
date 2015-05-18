@@ -33,10 +33,10 @@ angular.module('weather.controllers', [])
 	};
 })
 
-.controller('weatherCtr', ['$scope', 'Weather', '$ionicModal', function ($scope, Weather, $ionicModal) {
-		$scope.loginData = {};
-		var tst = Weather.getWeather();
-		console.log(tst);
+.controller('weatherCtr', ['$scope', 'Weather', 'WeatherDate', '$ionicModal', function ($scope, Weather, WeatherDate,$ionicModal) {
+		var vm = $scope.vm = {};
+		vm.weather = WeatherDate;
+		console.log(vm.weather);
 		// Create the login modal that we will use later
 		$ionicModal.fromTemplateUrl('templates/modal/weatherDetail.html', {
 			scope: $scope
@@ -53,5 +53,6 @@ angular.module('weather.controllers', [])
 		$scope.login = function () {
 			$scope.modal.show();
 		};
+
 
 	}]);

@@ -72,6 +72,11 @@ var weatherApp = angular.module('weather', ['ionic', 'ngCordova', 'weather.contr
 				views: {
 					'tab-weather': {
 						templateUrl: "templates/weather.html",
+						resolve: {
+							WeatherDate: function (Weather) {
+								return Weather.getLocalStorage('weather');
+							}
+						},
 						controller: 'weatherCtr'
 					}
 				}

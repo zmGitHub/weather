@@ -3,14 +3,14 @@
         <button class="buttons button-clear buttons-left header-item">
             <img class="avatar" ng-src="{{user.avatar || 'img/user.jpg'}}">
         </button>
-        <h1 class="title">深 圳</h1>
+        <h1 class="title">{{vm.weather.today.city}}</h1>
         <button class="buttons button button-icon icon ion-plus"></button>
     </ion-header-bar>
     <ion-content class="weather-bg has-header">
         <div class="row">
             <div class="col text-right">
                 <p>
-                    <small class="ft-white">2015年5月9日</small>
+                    <small class="ft-white">{{vm.weather.today.date_y}} {{vm.weather.today.week}}</small>
                 </p>
             </div>
         </div>
@@ -19,36 +19,12 @@
                 <div class="row row-center">
                     <div class="col text-center">
                         <p>
-                            <i class="wi wi-day-lightning ft-white fts-5 padding-10"></i>
+                            <i class="wi ft-white fts-5 padding-10" ng-class="vm.weather.today.fa | weatherIcon"></i>
                         </p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col text-center"><h1 class="ft-white padding-10">12°~25°</h1></div>
-                </div>
-            </ion-slide>
-            <ion-slide>
-                <div class="row row-center">
-                    <div class="col text-center">
-                        <p>
-                            <i class="wi wi-day-windy ft-white fts-5 padding-10"></i>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col text-center"><h1 class="ft-white padding-10">15°~35°</h1></div>
-                </div>
-            </ion-slide>
-            <ion-slide>
-                <div class="row row-center">
-                    <div class="col text-center">
-                        <p>
-                            <i class="wi wi-night-snow ft-white fts-5 padding-10"></i>
-                        </p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col text-center"><h1 class="ft-white padding-10">-3°~6°</h1></div>
+                    <div class="col text-center"><h1 class="ft-white padding-10">{{vm.weather.today.temperature}}°</h1></div>
                 </div>
             </ion-slide>
         </ion-slide-box>
@@ -56,13 +32,13 @@
     </ion-content>
     <div class="bar bar-subfooter over-subFooter">
         <div class="row">
-            <div class="col text-left padding-left-10"><h2 class="ft-white">雷阵雨</h2></div>
+            <div class="col text-left padding-left-10"><h2 class="ft-white">{{vm.weather.today.weather}}</h2></div>
             <div class="col text-right">
                 <button ng-click="login()" class="button button-clear button-icon ft-white ion-grid"></button>
             </div>
         </div>
         <div class="row">
-            <div class="col text-left padding-left-10"><p class="ft-white fts-5">25°</p></div>
+            <div class="col text-left padding-left-10"><p class="ft-white fts-5">{{vm.weather.sk.temp}}°</p></div>
             <div class="col text-right">
                 <button class="button button-clear button-icon ion-heart ft-red"></button>
             </div>
@@ -70,8 +46,8 @@
         <div class="row">
             <div class="col text-left padding-left-10">
                 <h4 class="ft-white">
-                    <span class="margin-10"><i class="icon ion-navigate"></i> 二级</span>
-                    <span><i class="icon ion-waterdrop"></i> 80%</span>
+                    <span class="margin-10"><i class="icon ion-navigate"></i>{{vm.weather.sk.wind_direction}} {{vm.weather.sk.wind_strength}}</span>
+                    <span><i class="icon ion-waterdrop"></i>{{vm.weather.sk.humidity}}%</span>
                 </h4>
             </div>
             <div class="col text-right">
@@ -83,7 +59,7 @@
         <div class="row">
             <div class="col text-left padding-left-10">
                 <p class="ft-white">
-                    下午 11:15 发布
+                    下午 {{vm.weather.sk.time}} 发布
                 </p>
             </div>
         </div>
