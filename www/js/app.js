@@ -1,4 +1,4 @@
-var weatherApp = angular.module('weather', ['ionic', 'ngCordova', 'weather.controllers'])
+var weatherApp = angular.module('weather', ['ionic', 'ngCordova'])
 
 	.run(function ($rootScope, $ionicPlatform, $cordovaNetwork, $cordovaGeolocation, $ionicLoading, Weather) {
 
@@ -12,7 +12,19 @@ var weatherApp = angular.module('weather', ['ionic', 'ngCordova', 'weather.contr
 				$cordovaGeolocation.getCurrentPosition(posOptions).then(function (position) {
 					var lat = position.coords.latitude;
 					var long = position.coords.longitude;
-					Weather.getGelocation(lat,long);
+					Weather.getGelocation(lat,long).then(function(res){
+						if(res){
+							$ionicLoading.show({
+								template: '当前城市'+res,
+								duration: 3000
+							});
+						}else{
+							$ionicLoading.show({
+								template: '地位失败,请手动添加城市',
+								duration: 3000
+							});
+						}
+					});
 				}, function () {
 					$ionicLoading.show({
 						template: '地位失败,请手动添加城市',
@@ -58,13 +70,11 @@ var weatherApp = angular.module('weather', ['ionic', 'ngCordova', 'weather.contr
 		$ionicConfigProvider.platform.android.views.transition('android');
 		$ionicConfigProvider.tabs.style('standard');
 
-
 		$stateProvider
 			.state('app', {
 				url: "/app",
 				abstract: true,
-				templateUrl: "templates/menu.html",
-				controller: 'AppCtrl'
+				templateUrl: "templates/menu.html"
 			})
 
 			.state('app.weather', {
@@ -81,33 +91,20 @@ var weatherApp = angular.module('weather', ['ionic', 'ngCordova', 'weather.contr
 					}
 				}
 			})
-
-			.state('app.browse', {
-				url: "/browse",
-				views: {
-					'app-browse': {
-						templateUrl: "templates/browse.html"
-					}
-				}
+			.state('cityManager', {
+				url: '/city-manager',
+				templateUrl: 'templates/cityManager/cityManager.html',
+				controller: 'cityManagerCtr'
 			})
-			.state('app.playlists', {
-				url: "/playlists",
-				views: {
-					'app-playlists': {
-						templateUrl: "templates/playlists.html",
-						controller: 'PlaylistsCtrl'
-					}
-				}
+			.state('cityAddProvince', {
+				url: '/city-add-province',
+				templateUrl: 'templates/cityManager/cityProvince.html',
+				controller: 'cityAddProvinceCtr'
 			})
-
-			.state('app.single', {
-				url: "/playlists/:playlistId",
-				views: {
-					'app-single': {
-						templateUrl: "templates/playlist.html",
-						controller: 'PlaylistCtrl'
-					}
-				}
+			.state('cityAddArea', {
+				url: '/city-add-area/:province',
+				templateUrl: 'templates/cityManager/cityArea.html',
+				controller: 'cityAddAreaCtr'
 			});
 		// if none of the above states are matched, use this as the fallback
 		$urlRouterProvider.otherwise('/app/weather');

@@ -15,7 +15,7 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-
+    <script src="lib/underscore/underscore-min.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <script src="cordova.js"></script>
@@ -27,11 +27,15 @@
     <!--service-->
     <script src="js/service/weather.js"></script>
     <!--constant-->
+    <script src="js/constant/cityList.js"></script>
     <!--routers-->
     <!--directives-->
     <!--thirdLib-->
     <!--controllers-->
-    <script src="js/controllers.js"></script>
+    <script src="js/controllers/weatherCtr.js"></script>
+    <script src="js/controllers/cityManagerCtr.js"></script>
+    <script src="js/controllers/cityAddProvinceCtr.js"></script>
+    <script src="js/controllers/cityAddAreaCtr.js"></script>
 </head>
 
 <body ng-app="weather">

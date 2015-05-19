@@ -19,35 +19,41 @@ weatherApp.factory('Weather', ['$http', '$q','$window', function($http, $q, $win
 			$http.get(url).success(function (data) {
 				if(!data.error_code){
 					weatherService.setLocalStorage('locationInfo', data.result);
+					weatherService.getWeatherUpdate(data.result.city);
+					defer.resolve(data.result.city);
+				}else{
+					defer.resolve(null);
 				}
-				defer.resolve(data.error_code);
+
+			}).error(function(){
+				weatherService.getWeatherUpdate('衡阳');
+				defer.resolve('衡阳');
 			});
 		}
-
 		return defer.promise;
 	};
 
 	/*获取当前天气信息*/
-	weatherService.getWeather = function (){
+	weatherService.getWeatherUpdate = function (city){
 		var defer = $q.defer();
-		var location = weatherService.getLocalStorage('locationInfo') || undefined;
-		if(angular.isUndefined(location)){
-			location = '衡阳';
+
+		var weatherCache = weatherService.getLocalStorage('weather') || undefined;
+		if(angular.isUndefined(weatherCache)){
+			weatherCache = [];
+			weatherService.setLocalStorage('weather', weatherCache);
 		}
-		var url = 'http://apis.haoservice.com/weather?cityname='+location+'&key='+weatherKey;
-/*		$http.get(url).success(function (data) {
+		var url = 'http://apis.haoservice.com/weather?cityname='+city+'&key='+weatherKey;
+		$http.get(url).success(function (data) {
 			if(!data.error_code){
-				weatherService.setLocalStorage('weather', data.result);
-				defer.resolve(data.result);
+				weatherCache.push(data.result);
+				weatherService.setLocalStorage('weather', weatherCache);
+				defer.resolve(weatherCache);
 			}else {
 				defer.resolve(null);
 			}
 		}).error(function () {
-			var weatherCache = weatherService.getLocalStorage('weather');
 			defer.resolve(weatherCache);
-		});*/
-		var weatherCache = weatherService.getLocalStorage('weather');
-		defer.resolve(weatherCache);
+		});
 		return defer.promise;
 	};
 

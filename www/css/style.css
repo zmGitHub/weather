@@ -82,6 +82,9 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .has-header{
     padding-top:44px !important;
 }
+.has-app-subheader {
+    padding-top:88px !important;
+}
 
 .has-footer{
     padding-bottom:44px !important;
@@ -206,12 +209,18 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .padding-left-10 {
     padding-left: 10px!important;
 }
+.weather-search {
+    padding: 0 10px!important;
+}
 /*自定义margin*/
 .margin-10 {
     margin-right: 10px;
 }
 .margin-left-15 {
     margin-left: 15px !important;
+}
+.margin-left-50 {
+    margin-left: 50px !important;
 }
 /*自定义 浮动*/
 .pull-left {

@@ -1,0 +1,23 @@
+<ion-view view-title="省份">
+    <ion-header-bar align-title="center" class="bar-dark">
+        <a ui-sref="cityManager" nav-direction="back" nav-transition="android"
+           class="buttons button button-icon icon ion-ios-arrow-back button-left"></a>
+
+        <h1 class="title">省份</h1>
+        <button class="buttons button button-icon icon ion-ios-location-outline button-right"></button>
+    </ion-header-bar>
+    <div class="bar bar-subheader">
+        <label class="item item-input weather-search">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" ng-model="vm.filter.$" placeholder="搜索城市">
+        </label>
+    </div>
+    <ion-content class="has-app-subheader">
+        <div class="list">
+            <a ng-repeat="province in vm.cityProvince | filter:vm.filter" class="item item-icon-right" nav-direction="forward" nav-transition="android" href="#/city-add-area/{{province.p}}">
+                {{province.p}}
+                <i class="icon ion-ios-arrow-right"></i>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

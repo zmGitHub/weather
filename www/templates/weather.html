@@ -4,7 +4,7 @@
             <img class="avatar" ng-src="{{user.avatar || 'img/user.jpg'}}">
         </button>
         <h1 class="title">{{vm.weather.today.city}}</h1>
-        <button class="buttons button button-icon icon ion-plus"></button>
+        <a ui-sref="cityManager" nav-direction="forward" nav-transition="android" class="buttons button button-icon icon ion-android-globe"></a>
     </ion-header-bar>
     <ion-content class="weather-bg has-header">
         <div class="row">
@@ -45,10 +45,10 @@
         </div>
         <div class="row">
             <div class="col text-left padding-left-10">
-                <h4 class="ft-white">
+                <h5 class="ft-white">
                     <span class="margin-10"><i class="icon ion-navigate"></i>{{vm.weather.sk.wind_direction}} {{vm.weather.sk.wind_strength}}</span>
                     <span><i class="icon ion-waterdrop"></i>{{vm.weather.sk.humidity}}%</span>
-                </h4>
+                </h5>
             </div>
             <div class="col text-right">
                 <button class="button button-clear air-bg">
