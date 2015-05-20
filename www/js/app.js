@@ -95,7 +95,8 @@ var weatherApp = angular.module('weather', ['ionic', 'ngCordova'])
 				url: "/china",
 				views: {
 					'tab-china': {
-						templateUrl: "templates/china.html"
+						templateUrl: "templates/china.html",
+						controller: 'chinaCtr'
 					}
 				}
 			})
@@ -132,6 +133,21 @@ var weatherApp = angular.module('weather', ['ionic', 'ngCordova'])
 				url: '/weather-auto-update',
 				templateUrl: 'templates/setting/weatherAutoUpdate.html',
 				controller: 'weatherAutoUpdateCtr'
+			})
+			.state('adviceToUs', {
+				url: '/advice-to-us',
+				templateUrl: 'templates/setting/adviceToUs.html',
+				controller: 'adviceToUsCtr'
+			})
+			.state('appSetting', {
+				url: '/app-setting',
+				templateUrl: 'templates/setting/appSetting.html',
+				controller: 'appSettingCtr'
+			})
+			.state('aboutUs', {
+				url: '/about-us',
+				templateUrl: 'templates/setting/aboutUs.html',
+				controller: 'aboutUsCtr'
 			})
 			.state('cityManager', {
 				url: '/city-manager',

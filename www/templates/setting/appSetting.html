@@ -1,0 +1,35 @@
+<ion-view view-title="系统设置">
+    <ion-header-bar align-title="center" class="bar-dark">
+        <a ui-sref="app.profile" nav-direction="back" nav-transition="android" class="button button-icon icon ion-ios-arrow-back"></a>
+        <h1 class="title">系统设置</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <div class="item auto-update-padding">
+                <span class="line-height-32">推送通知</span>
+                <label class="toggle toggle-balanced pull-right">
+                    <input type="checkbox" checked>
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </div>
+            <div class="item auto-update-padding">
+                <span class="line-height-32">GPS定位</span>
+                <label class="toggle toggle-balanced pull-right">
+                    <input type="checkbox" checked>
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </div>
+            <a class="item" href>
+                数据来源: 中国天气网
+            </a>
+            <div class="item item-divider"></div>
+            <a ng-click="clearCache()" class="item" href>
+                清除缓存
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

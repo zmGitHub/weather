@@ -1,0 +1,18 @@
+<ion-view view-title="意见反馈">
+    <ion-header-bar align-title="center" class="bar-dark">
+        <a ui-sref="app.profile" nav-direction="back" nav-transition="android" class="button button-icon icon ion-ios-arrow-back"></a>
+        <h1 class="title">意见反馈</h1>
+        <button ng-click="userAdvice()" class="button buttons button-clear">提 交</button>
+    </ion-header-bar>
+    <ion-content padding="true">
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" name="tel" minlength="6" maxlength="11" placeholder="手机号码或邮箱(可选)" required>
+            </label>
+            <label class="item item-input">
+                <textarea ng-model="vm.advice" rows="10" maxlength="200" placeholder="亲~!留下你宝贵的意见吧!(200字以内)"></textarea>
+            </label>
+
+        </div>
+    </ion-content>
+</ion-view>

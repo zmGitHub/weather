@@ -36,23 +36,23 @@
                 产品信息
             </div>
             <!--待评价-->
-            <a class="item item-icon-left item-icon-right" href="#">
+            <a ui-sref="adviceToUs" nav-transition="android" nav-direction="forward" class="item item-icon-left item-icon-right" href>
                 <i class="icon ion-clipboard font-blue"></i>
                 意见反馈
                 <i class="icon ion-ios-arrow-right font-blue fts-1"></i>
             </a>
 
             <!--积分-->
-            <a class="item item-icon-left item-icon-right" href="#">
+            <a ng-click="checkAppVersion()" class="item item-icon-left item-icon-right" href>
                 <i class="icon ion-ios-cloud-upload-outline font-blue fts-1"></i>
                 检测更新
-                <span class="badge badge-royal margin-right-15">0</span>
+                <span class="badge margin-right-15">当前版本V1.0.0</span>
 
                 <i class="icon ion-ios-arrow-right font-blue fts-1"></i>
             </a>
 
             <!--设置-->
-            <a class="item item-icon-left item-icon-right" href="#">
+            <a ui-sref="appSetting" nav-transition="android" nav-direction="forward" class="item item-icon-left item-icon-right" href>
                 <i class="icon ion-ios-gear-outline font-blue"></i>
                 设置
                 <span class="item-note">常用信息,订阅,App设置</span>
@@ -60,7 +60,7 @@
             </a>
 
             <!--关于-->
-            <a class="item item-icon-left item-icon-right" href="#">
+            <a ui-sref="aboutUs" nav-transition="android" nav-direction="forward" class="item item-icon-left item-icon-right" href>
                 <i class="icon ion-ios-information-outline font-blue"></i>
                 关于
                 <i class="icon ion-ios-arrow-right font-blue fts-1"></i>
