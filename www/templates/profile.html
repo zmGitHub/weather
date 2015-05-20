@@ -1,0 +1,71 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar-dark">
+        <h1 class="title">我的账号</h1>
+    </ion-header-bar>
+    <ion-content padding="true">
+        <div class="list">
+            <a ng-click="checkLoginStatus()" class="item item-icon-right profile-padding" href>
+                <i class="icon ion-ios-arrow-right font-blue fts-1"></i>
+                <div class="item item-avatar no-border bg-transparent">
+                    <img ng-src="{{user.avatar || 'img/user.jpg'}}">
+                    <h2>{{user.name || user.tel || '未登录'}}</h2>
+                    <p>常居地: {{user.hotAddress || '未设置'}}</p>
+                </div>
+            </a>
+
+            <!--全部订单-->
+            <a ui-sref="gallery" nav-transition="android" nav-direction="forward" class="item item-icon-left item-icon-right" href>
+                <i class="icon ion-images ft-travel"></i>
+                天气背景
+                <span class="badge badge-assertive margin-right-15">6</span>
+                <i class="icon ion-ios-arrow-right font-blue fts-1"></i>
+            </a>
+            <!--待付款-->
+            <a ui-sref="cityManager" nav-transition="android" nav-direction="forward" class="item item-icon-left item-icon-right" href>
+                <i class="icon ion-ios-location-outline font-blue"></i>
+                城市管理
+                <i class="icon ion-ios-arrow-right font-blue fts-1"></i>
+            </a>
+            <!--未出行-->
+            <a ui-sref="weatherAutoUpdate" nav-transition="android" nav-direction="forward" class="item item-icon-left item-icon-right" href>
+                <i class="icon ion-android-alarm-clock font-blue"></i>
+                天气自动更新
+                <i class="icon ion-ios-arrow-right font-blue fts-1"></i>
+            </a>
+            <div class="item item-divider">
+                产品信息
+            </div>
+            <!--待评价-->
+            <a class="item item-icon-left item-icon-right" href="#">
+                <i class="icon ion-clipboard font-blue"></i>
+                意见反馈
+                <i class="icon ion-ios-arrow-right font-blue fts-1"></i>
+            </a>
+
+            <!--积分-->
+            <a class="item item-icon-left item-icon-right" href="#">
+                <i class="icon ion-ios-cloud-upload-outline font-blue fts-1"></i>
+                检测更新
+                <span class="badge badge-royal margin-right-15">0</span>
+
+                <i class="icon ion-ios-arrow-right font-blue fts-1"></i>
+            </a>
+
+            <!--设置-->
+            <a class="item item-icon-left item-icon-right" href="#">
+                <i class="icon ion-ios-gear-outline font-blue"></i>
+                设置
+                <span class="item-note">常用信息,订阅,App设置</span>
+                <i class="icon ion-ios-arrow-right font-blue fts-1"></i>
+            </a>
+
+            <!--关于-->
+            <a class="item item-icon-left item-icon-right" href="#">
+                <i class="icon ion-ios-information-outline font-blue"></i>
+                关于
+                <i class="icon ion-ios-arrow-right font-blue fts-1"></i>
+            </a>
+        </div>
+    </ion-content>
+
+</ion-view>

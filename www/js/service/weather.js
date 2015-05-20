@@ -1,7 +1,7 @@
 /**
  * Created by turbo on 15-5-14.
  */
-weatherApp.factory('Weather', ['$http', '$q','$window', function($http, $q, $window){
+weatherApp.factory('Weather', ['$http', '$q', '$ionicLoading', '$window', function($http, $q, $ionicLoading, $window){
 	var isOffLine = this.offLine = false;
 	/*天气接口key值*/
 	var weatherKey = this.weatherKey = '4e2a4a4be57445b2973fa2a367cb8539';
@@ -36,7 +36,7 @@ weatherApp.factory('Weather', ['$http', '$q','$window', function($http, $q, $win
 	/*获取当前天气信息*/
 	weatherService.getWeatherUpdate = function (city){
 		var defer = $q.defer();
-
+		weatherService.showLoading();
 		var weatherCache = weatherService.getLocalStorage('weather') || undefined;
 		if(angular.isUndefined(weatherCache)){
 			weatherCache = [];
@@ -51,8 +51,10 @@ weatherApp.factory('Weather', ['$http', '$q','$window', function($http, $q, $win
 			}else {
 				defer.resolve(null);
 			}
+			weatherService.hideLoading();
 		}).error(function () {
 			defer.resolve(weatherCache);
+			weatherService.hideLoading();
 		});
 		return defer.promise;
 	};
@@ -68,5 +70,14 @@ weatherApp.factory('Weather', ['$http', '$q','$window', function($http, $q, $win
 		return angular.fromJson(objStr);
 	};
 
+	/*提示信息*/
+	weatherService.showLoading = function () {
+		$ionicLoading.show({
+			template: '<ion-spinner icon="bubbles"></ion-spinner>'
+		});
+	};
+	weatherService.hideLoading = function () {
+		$ionicLoading.hide();
+	};
 	return weatherService;
 }]);

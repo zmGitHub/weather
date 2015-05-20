@@ -12,11 +12,11 @@
     <ion-content class="has-app-subheader">
         <div class="list">
 
-            <a ng-if="!vm.hasArea" ng-repeat="area in vm.areaList.c | filter:vm.filter" class="item item-icon-right" ng-click="addCity(vm.province, area.n)" href>
+            <a ng-if="!vm.hasArea" ng-repeat="area in vm.areaList.c | filter:vm.filter" class="item item-icon-right" ng-click="addProvinceCity(vm.province, area.n)" href>
                 {{area.n}}
             </a>
             <div ng-if="vm.hasArea" ng-repeat="area in vm.areaList.c | filter:vm.filter">
-                <a ng-repeat="city in area.a | filter:vm.filter" class="item item-icon-right" ng-click="addCity(area.n, city.s)" href>
+                <a ng-repeat="city in area.a | filter:vm.filter" class="item item-icon-right" ng-click="addAreaCity(area.n, city.s)" href>
                     {{area.n}}-{{city.s}}
                 </a>
             </div>

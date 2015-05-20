@@ -1,0 +1,29 @@
+<ion-view view-title="用户登录">
+    <ion-header-bar align-title="center" class="bar-dark">
+        <a ui-sref="app.weather" nav-direction="back" nav-transition="android" class="button button-icon icon ion-ios-arrow-back"></a>
+        <h1 class="title">会员登录</h1>
+        <a ui-sref="userRegister" nav-direction="forward" nav-transition="android" class="button button-clear">注 册</a>
+    </ion-header-bar>
+    <ion-content>
+        <form name="loginForm" ng-submit="userLogin(loginForm.$valid)" role="form" novalidate>
+            <div class="list">
+                <label class="item item-input">
+                    <span class="input-label">用户名 <i class="icon ion-person"></i></span>
+                    <input type="tel" name="userName" ng-model="vm.userName" ng-pattern="/^1\d{10}$/" minlength="11" maxlength="11" placeholder="手机号码" required>
+                </label>
+                <label class="item item-input">
+                    <span class="input-label">密&nbsp;&nbsp;&nbsp;码 <i class="icon ion-locked"></i></span>
+                    <input type="password" name="password" ng-model="vm.password" minlength="6" maxlength="20" placeholder="6-20位字母，数字和字符" required>
+                </label>
+            </div>
+            <div class="padding">
+                <button type="submit" class="button button-block button-dark" ng-disabled="loginForm.$invalid">
+                    登 录
+                </button>
+                <p class="text-center">
+                    <a nav-direction="forward" nav-transition="android" href="#/forget-password">忘记密码 <i class="icon ion-arrow-right-c"></i></a>
+                </p>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

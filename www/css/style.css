@@ -71,8 +71,21 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
     height: 100%;
     border-radius: 50%;
 }
-
-
+.line-height-32 {
+    line-height: 36px!important;
+}
+.line-height-34 {
+    line-height: 34px!important;
+}
+.auto-update-padding {
+    padding: 9px 16px!important;
+}
+/*清除input框的自动填充颜色*/
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
 /*让header-bar 半透明*/
 .scroll-content{
     top: 0 !important;
@@ -93,9 +106,19 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 .bar-positive{
     background: rgba(255, 255, 255,0) !important;
 }
-
-
+.no-border {
+    border: none!important;
+}
+.bg-transparent {
+    background-color: transparent!important;
+}
+.profile-padding {
+    padding: 0 54px 0 0!important;
+}
 /*定义字体颜色*/
+.font-blue {
+    color: #447daa !important;
+}
 .ft-white {
     color: #FFFFFF !important;
 }
@@ -104,6 +127,9 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 }
 .ft-red {
     color: #f15b6c !important;
+}
+.ft-orange {
+    color: #ff7d13 !important;
 }
 
 .ft-gray {
@@ -138,7 +164,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 
 /*定义字体的大小*/
 .fts-1 {
-    font-size: 1.5em;
+    font-size: 1.5em!important;
 }
 .fts-2 {
     font-size: 2em;
@@ -202,6 +228,9 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 }
 
 /*自定义padding*/
+.no-padding {
+    padding: 0!important;
+}
 .padding-10 {
     padding: 10px;
 }
@@ -213,11 +242,20 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
     padding: 0 10px!important;
 }
 /*自定义margin*/
+.no-margin {
+    margin: 0!important;
+}
+.no-margin-bottom {
+    margin-bottom: 0!important;
+}
 .margin-10 {
     margin-right: 10px;
 }
 .margin-left-15 {
     margin-left: 15px !important;
+}
+.margin-right-15 {
+    margin-right: 15px!important;
 }
 .margin-left-50 {
     margin-left: 50px !important;

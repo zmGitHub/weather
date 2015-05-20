@@ -1,0 +1,40 @@
+<ion-view view-title="天气自动更新">
+    <ion-header-bar align-title="center" class="bar-dark">
+        <a ui-sref="app.profile" nav-direction="back" nav-transition="android" class="button button-icon icon ion-ios-arrow-back"></a>
+        <h1 class="title">自动更新</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+            <div class="item auto-update-padding">
+                <span class="line-height-32">天气自动更新</span>
+                <label class="toggle toggle-balanced pull-right">
+                    <input type="checkbox" ng-model="vm.isUpdate">
+                    <div class="track">
+                        <div class="handle"></div>
+                    </div>
+                </label>
+            </div>
+
+            <a ng-if="vm.isUpdate" class="item" href="#">
+                更新开始时间
+                <span class="item-note">
+                  06:22
+                </span>
+            </a>
+
+            <a ng-if="vm.isUpdate" class="item" href="#">
+                更新结束时间
+                <span class="item-note">
+                  22:22
+                </span>
+            </a>
+            <div ng-if="vm.isUpdate" class="item item-divider"></div>
+            <a ng-if="vm.isUpdate" class="item" href="#">
+                更新间隔
+                <span class="item-note">
+                  2 小时
+                </span>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

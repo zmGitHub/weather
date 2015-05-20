@@ -1,4 +1,4 @@
-<ion-view>
+<ion-view cache-view="false">
     <ion-header-bar align-title="center" class="bar-positive">
         <button class="buttons button-clear buttons-left header-item">
             <img class="avatar" ng-src="{{user.avatar || 'img/user.jpg'}}">
@@ -14,17 +14,17 @@
                 </p>
             </div>
         </div>
-        <ion-slide-box show-pager="false">
-            <ion-slide>
+        <ion-slide-box show-pager="false" on-slide-changed="changeCity($index)">
+            <ion-slide ng-repeat="city in vm.citys">
                 <div class="row row-center">
                     <div class="col text-center">
                         <p>
-                            <i class="wi ft-white fts-5 padding-10" ng-class="vm.weather.today.fa | weatherIcon"></i>
+                            <i class="wi ft-white fts-5 padding-10" ng-class="city.today.fa | weatherIcon"></i>
                         </p>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col text-center"><h1 class="ft-white padding-10">{{vm.weather.today.temperature}}°</h1></div>
+                    <div class="col text-center"><h1 class="ft-white padding-10">{{city.today.temperature}}°</h1></div>
                 </div>
             </ion-slide>
         </ion-slide-box>
@@ -52,7 +52,7 @@
             </div>
             <div class="col text-right">
                 <button class="button button-clear air-bg">
-                    <i class="icon ion-leaf ft-green"></i> <span class="ft-white">24 优秀</span>
+                    <i class="icon ion-leaf ft-green"></i> <span class="ft-white">{{vm.weather.sk.temp | number}}</span>
                 </button>
             </div>
         </div>

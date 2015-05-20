@@ -1,0 +1,32 @@
+<ion-view view-title="用户注册">
+    <ion-header-bar align-title="center" class="bar-dark">
+        <a ui-sref="userLogin" nav-direction="back" nav-transition="android" class="button button-icon icon ion-ios-arrow-back"></a>
+        <h1 class="title">会员注册</h1>
+    </ion-header-bar>
+    <ion-content>
+        <form name="registerForm" ng-submit="registerAction(registerForm.$valid)" role="form" novalidate>
+            <div class="list">
+                <label class="item item-input bg-transparent">
+                    <span class="input-label">手机号码<i class="icon ion-iphone"></i></span>
+                    <input type="tel" name="telNumber" ng-model="vm.telNumber" ng-pattern="/^1\d{10}$/" minlength="11" maxlength="11" placeholder="手机号码" ng-disabled="vm.isRetry" required>
+                </label>
+                <div class="item item-input-inset">
+                    <label class="item-input-wrapper bg-transparent">
+                        <input type="text" name="telValidCode" ng-model="vm.telValidCode" ng-pattern="/\d{6}/" minlength="6" maxlength="6" placeholder="6位数字" required>
+                    </label>
+                    <button type="button" class="button button-small" ng-click="startTimer(registerForm.telNumber.$valid)" ng-disabled="vm.isRetry">
+                        <span ng-class="{positive:!vm.isRetry}">{{vm.validTimeStr}}</span>
+                    </button>
+                </div>
+                <label class="item item-input bg-transparent">
+                    <span class="input-label">登录密码 <i class="icon ion-ios-locked-outline"></i></span> <!--^(?![0-9]+$)(?!.*(.).*\1)[0-9a-zA-Z]+$-->
+                    <input type="password" name="loginPassword" ng-model="vm.loginPassword" minlength="6" maxlength="20" placeholder="6-20位字母,数字和字符" required>
+                </label>
+            </div>
+
+            <div class="padding">
+                <button type="submit" class="button button-block button-dark" ng-disabled="registerForm.$invalid">注册</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

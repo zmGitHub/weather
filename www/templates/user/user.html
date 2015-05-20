@@ -1,0 +1,57 @@
+<ion-view>
+    <ion-header-bar align-title="center" class="bar-dark">
+        <a href="" ui-sref='app.profile' nav-direction="back" nav-transition='android' class="button button-icon icon ion-ios-arrow-back"></a>
+        <h1 class="title">账号管理</h1>
+    </ion-header-bar>
+    <ion-content padding="true">
+        <div class="list">
+            <a class="item item-avatar-right" href="">
+                <img ng-src="{{user.avatar || 'img/user.jpg'}}">
+                <span class="line-height-32">头像</span>
+            </a>
+            <div class="item" href="#">
+                账户安全
+                <span class="item-note">
+                  中
+                </span>
+            </div>
+            <div class="item item-divider">常用信息</div>
+            <a ng-show="!vm.updateName" ng-click="toggleName()" class="item item-icon-right" href>
+                昵称
+                <span class="item-note">
+                  {{user.name || '未设置'}}
+                </span>
+                <i class="icon ion-ios-arrow-right font-gray fts-1"></i>
+            </a>
+            <div ng-show="vm.updateName" class="item item-input-inset">
+                <label class="item-input-wrapper">
+                    <input ng-model="vm.name" type="text" placeholder="请填写真实姓名">
+                </label>
+                <button ng-click="updateUserName(vm.name)" class="button button-small">
+                    修 改
+                </button>
+            </div>
+            <a ng-click="updateCurrentPosition()" class="item item-icon-right" href>
+                常居住地
+                <span class="item-note">
+                  {{user.hotAddress || '未设置'}}
+                </span>
+                <i class="icon ion-android-locate font-gray fts-1"></i>
+            </a>
+            <a ui-sref="userRegister" nav-transition="android" nav-direction="forward" class="item item-icon-right" href>
+                手机号码
+                <span class="item-note">
+                  {{user.tel}} <small>已绑定</small>
+                </span>
+                <i class="icon ion-ios-arrow-right font-gray fts-1"></i>
+            </a>
+            <a ui-sref="userRegister" nav-transition="android" nav-direction="forward" class="item item-icon-right" href>
+                修改密码
+                <i class="icon ion-ios-arrow-right font-gray fts-1"></i>
+            </a>
+            <button ng-click="logOut()" class="button button-block button-assertive">
+                退出登录
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

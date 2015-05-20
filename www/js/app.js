@@ -1,7 +1,7 @@
 var weatherApp = angular.module('weather', ['ionic', 'ngCordova'])
 
-	.run(function ($rootScope, $ionicPlatform, $cordovaNetwork, $cordovaGeolocation, $ionicLoading, Weather) {
-
+	.run(function ($rootScope, $ionicPlatform, $cordovaNetwork, $cordovaGeolocation, $ionicLoading, Weather, User) {
+		User.getToken();
 		/*检测是否有网路存在*/
 		document.addEventListener("deviceready", function () {
 
@@ -91,9 +91,56 @@ var weatherApp = angular.module('weather', ['ionic', 'ngCordova'])
 					}
 				}
 			})
+			.state('app.china', {
+				url: "/china",
+				views: {
+					'tab-china': {
+						templateUrl: "templates/china.html"
+					}
+				}
+			})
+			.state('app.profile', {
+				url: "/profile",
+				views: {
+					'tab-profile': {
+						templateUrl: "templates/profile.html",
+						controller: 'userProfileCtr'
+					}
+				}
+			})
+			.state('userLogin', {
+				url: '/user-login',
+				templateUrl: 'templates/user/login.html',
+				controller: 'userLoginCtr'
+			})
+			.state('userRegister', {
+				url: '/user-register',
+				templateUrl: 'templates/user/register.html',
+				controller: 'userRegisterCtr'
+			})
+			.state('userSetting', {
+				url: '/user-setting',
+				templateUrl: 'templates/user/user.html',
+				controller: 'userSettingCtr'
+			})
+			.state('gallery', {
+				url: '/gallery-shop',
+				templateUrl: 'templates/user/gallery.html',
+				controller: 'galleryCtr'
+			})
+			.state('weatherAutoUpdate', {
+				url: '/weather-auto-update',
+				templateUrl: 'templates/setting/weatherAutoUpdate.html',
+				controller: 'weatherAutoUpdateCtr'
+			})
 			.state('cityManager', {
 				url: '/city-manager',
 				templateUrl: 'templates/cityManager/cityManager.html',
+				resolve: {
+					cityList: function (Weather) {
+						return Weather.getLocalStorage('weather');
+					}
+				},
 				controller: 'cityManagerCtr'
 			})
 			.state('cityAddProvince', {
