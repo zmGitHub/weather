@@ -70,12 +70,23 @@ weatherApp.factory('Weather', ['$http', '$q', '$ionicLoading', '$window', functi
 		return angular.fromJson(objStr);
 	};
 
-	/*提示信息*/
+	/*加载信息*/
 	weatherService.showLoading = function () {
 		$ionicLoading.show({
 			template: '<ion-spinner icon="bubbles"></ion-spinner>'
 		});
 	};
+	/*提示信息*/
+	weatherService.showTip = function (textStr) {
+		$ionicLoading.show({
+			template: textStr?textStr:'温馨提示',
+			animation: 'fade-in',
+			showBackdrop: true,
+			duration:2000,
+			showDelay: 0
+		});
+	};
+
 	weatherService.hideLoading = function () {
 		$ionicLoading.hide();
 	};

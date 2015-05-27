@@ -120,6 +120,14 @@ weatherApp.factory('User', ['$http', '$q', '$rootScope', '$ionicLoading', '$wind
 		}
 		return defer.promise;
 	};
+
+	//用户头像修改
+	userService.doUpdateUserAvatar = function(avatar){
+		var userObj = userService.getToken();
+		userObj.avatar = avatar;
+		userService.setToken(userObj);
+	};
+
 	//注销
 	userService.doLogout = function () {
 		$rootScope.user = {};

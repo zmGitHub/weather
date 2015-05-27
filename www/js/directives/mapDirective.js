@@ -35,3 +35,9 @@ weatherApp.directive("appMap", function ($window) {
 		}
 	};
 });
+
+/*https://github.com/vczero/OurTimes/blob/master/client-web/lib/controllers/contacts/map.js
+ http://www.it165.net/pro/html/201503/36888.html
+ http://segmentfault.com/q/1010000002484757
+ http://vczero.github.io/tuban/main.html#/contacts
+* */

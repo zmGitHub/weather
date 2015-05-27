@@ -5,7 +5,7 @@
     </ion-header-bar>
     <ion-content padding="true">
         <div class="list">
-            <a class="item item-avatar-right" href="">
+            <a ng-click="getAvatar()" class="item item-avatar-right" href="">
                 <img ng-src="{{user.avatar || 'img/user.jpg'}}">
                 <span class="line-height-32">头像</span>
             </a>

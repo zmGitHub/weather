@@ -7,6 +7,12 @@
         <a ui-sref="cityManager" nav-direction="forward" nav-transition="android" class="buttons button button-icon icon ion-android-globe"></a>
     </ion-header-bar>
     <ion-content class="weather-bg has-header">
+        <ion-refresher
+                pulling-text="下拉刷新..."
+                pulling-icon="ion-ios-cloud-outline"
+                spinner="spinner-light"
+                on-refresh="doRefresh()">
+        </ion-refresher>
         <div class="row">
             <div class="col text-right">
                 <p>
@@ -28,7 +34,6 @@
                 </div>
             </ion-slide>
         </ion-slide-box>
-
     </ion-content>
     <div class="bar bar-subfooter over-subFooter">
         <div class="row">

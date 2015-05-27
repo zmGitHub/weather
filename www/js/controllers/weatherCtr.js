@@ -1,7 +1,16 @@
-weatherApp.controller('weatherCtr', ['$scope', 'Weather', 'WeatherDate', '$ionicModal', function ($scope, Weather, WeatherDate, $ionicModal) {
+weatherApp.controller('weatherCtr', ['$scope', 'Weather', 'WeatherDate', '$ionicModal', '$timeout', function ($scope, Weather, WeatherDate, $ionicModal,$timeout) {
 	var vm = $scope.vm = {};
 	vm.citys = WeatherDate;
 	vm.weather = WeatherDate[0];
+
+	/*下拉刷新*/
+	$scope.doRefresh = function(){
+		$timeout( function() {
+			//simulate async response
+			Weather.showTip('数据已是最新');
+			$scope.$broadcast('scroll.refreshComplete');
+		}, 2000);
+	};
 	/*切换城市*/
 	$scope.changeCity = function(index){
 		vm.weather = WeatherDate[index];

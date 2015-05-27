@@ -5,14 +5,19 @@
         <a ui-sref="cityAddProvince" nav-direction="forward" nav-transition="android" class="buttons button button-icon icon ion-plus-round button-right"></a>
     </ion-header-bar>
     <ion-content class="has-header">
-        <div class="list">
-            <a ng-repeat="city in vm.cityArr" class="item item-icon-left" href="#">
+        <ion-list>
+            <ion-item ng-repeat="city in vm.cityArr" class="item-icon-left">
                 <i class="icon wi" ng-class="city.today.fa | weatherIcon"></i>
                 {{city.today.temperature}} <span class="ft-travel button-icon ion-ios-location-outline margin-left-50">  {{city.today.city}}</span>
                 <span class="item-note">
                   {{city.today.weather}}
                 </span>
-            </a>
-        </div>
+                <ion-option-button class="button-assertive"
+                                   ng-click="vm.cityArr.splice($index, 1)">
+                    删除
+                </ion-option-button>
+
+            </ion-item>
+        </ion-list>
     </ion-content>
 </ion-view>
