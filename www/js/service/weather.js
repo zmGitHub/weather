@@ -59,6 +59,22 @@ weatherApp.factory('Weather', ['$http', '$q', '$ionicLoading', '$window', functi
 		return defer.promise;
 	};
 
+	/*存储实景列表*/
+	weatherService.addWeatherShare = function (obj) {
+		var weatherShareList = weatherService.getLocalStorage('weatherShareList') || [];
+		if(weatherShareList.length>0){
+			weatherShareList.push(obj);
+			weatherShareList = weatherShareList.reverse();
+		}else {
+			weatherShareList.push(obj);
+		}
+		weatherService.setLocalStorage('weatherShareList', weatherShareList);
+	};
+
+	/*获取实景列表*/
+	weatherService.getWeatherShare = function(){
+		return weatherService.getLocalStorage('weatherShareList');
+	};
 	/*存储localstorage*/
 	weatherService.setLocalStorage = function (name, obj) {
 		var objStr = angular.toJson(obj); //转换成json字符串

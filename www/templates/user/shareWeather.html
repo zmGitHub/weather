@@ -1,0 +1,26 @@
+<ion-view view-title="发布时景">
+    <ion-header-bar align-title="center" class="bar-dark">
+        <a ui-sref="gallery" nav-direction="back" nav-transition="android" class="button button-icon icon ion-ios-arrow-back"></a>
+        <h1 class="title">发布时景</h1>
+        <button ng-click="shareWeatherToServe()" class="button button-icon icon button-clear ion-android-share"></button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list card">
+
+            <div class="item item-avatar">
+                <img ng-src="{{user.avatar || 'img/user.jpg'}}">
+                <h2> {{user.name || '未设置'}}</h2>
+                <p>{{user.hotAddress || '珠晖区'}}</p>
+            </div>
+
+            <div class="item item-image">
+                <img ng-src="{{vm.weatherPic}}">
+            </div>
+
+            <label class="item item-input">
+                <textarea ng-model="vm.advice" rows="5" maxlength="110" placeholder="亲~!说点什么吧!(可选)"></textarea>
+            </label>
+
+        </div>
+    </ion-content>
+</ion-view>

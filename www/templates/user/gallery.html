@@ -1,132 +1,32 @@
-<ion-view view-title="天气背景">
+<ion-view cache-view="false" view-title="时景分享">
     <ion-header-bar align-title="center" class="bar-dark">
         <a ui-sref="app.profile" nav-direction="back" nav-transition="android" class="button button-icon icon ion-ios-arrow-back"></a>
-        <h1 class="title">天气背景</h1>
+        <h1 class="title">时景分享</h1>
+        <button ng-click="shareWeather()" class="button button-icon icon button-clear ion-camera"></button>
     </ion-header-bar>
     <ion-content>
-        <div class="row">
-            <div class="col">
-                <div class="list card no-margin-bottom">
 
-                    <div class="item item-image">
-                        <img src="http://imgstore.cdn.sogou.com/app/a/100540002/981051_s_90_2_219x160.jpg">
-                    </div>
-                    <div class="row no-padding">
-                        <div class="col">
-                            <button class="button button-clear button-small no-margin button-block pull-left">
-                                应 用
-                            </button>
-                        </div>
-                        <div class="col">
-                            <button class="button button-clear button-small no-margin button-block icon-left ion-ios-heart pull-right">
-                                0
-                            </button>
-                        </div>
-                    </div>
-                </div>
+        <div class="list card" ng-repeat="weahterPic in vm.weahterShareList">
+
+            <div class="item item-avatar">
+                <img ng-src="{{user.avatar || 'img/user.jpg'}}">
+                <h2> {{user.name || '未设置'}}</h2>
+                <p>{{user.hotAddress || '珠晖区'}}</p>
             </div>
-            <div class="col">
-                <div class="list card no-margin-bottom">
 
-                    <div class="item item-image">
-                        <img src="http://imgstore.cdn.sogou.com/app/a/100540002//701723_s_90_2_219x160.jpg">
-                    </div>
-                    <div class="row no-padding">
-                        <div class="col">
-                            <button class="button button-clear button-small no-margin button-block pull-left">
-                                应 用
-                            </button>
-                        </div>
-                        <div class="col">
-                            <button class="button button-clear button-small no-margin button-block icon-left ion-ios-heart pull-right">
-                                0
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div class="item item-image">
+                <img ng-src="{{weahterPic.url}}">
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="list card no-margin-bottom">
-
-                    <div class="item item-image">
-                        <img src="http://imgstore.cdn.sogou.com/app/a/100540002//714984_s_90_2_219x160.jpg">
-                    </div>
-                    <div class="row no-padding">
-                        <div class="col">
-                            <button class="button button-clear button-small no-margin button-block pull-left">
-                                应 用
-                            </button>
-                        </div>
-                        <div class="col">
-                            <button class="button button-clear button-small no-margin button-block icon-left ion-ios-heart pull-right">
-                                0
-                            </button>
-                        </div>
-                    </div>
+            <div class="row no-padding">
+                <div class="col">
+                    <button class="button button-clear button-small no-margin button-block pull-left">
+                        {{weahterPic.shareTime}}
+                    </button>
                 </div>
-            </div>
-            <div class="col">
-                <div class="list card no-margin-bottom">
-
-                    <div class="item item-image">
-                        <img src="http://imgstore.cdn.sogou.com/app/a/100540002//1176387_s_90_2_219x160.jpg">
-                    </div>
-                    <div class="row no-padding">
-                        <div class="col">
-                            <button class="button button-clear button-small no-margin button-block pull-left">
-                                应 用
-                            </button>
-                        </div>
-                        <div class="col">
-                            <button class="button button-clear button-small no-margin button-block icon-left ion-ios-heart pull-right">
-                                0
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div class="list card no-margin-bottom">
-
-                    <div class="item item-image">
-                        <img src="http://imgstore.cdn.sogou.com/app/a/100540002//1171963_s_90_2_219x160.jpg">
-                    </div>
-                    <div class="row no-padding">
-                        <div class="col">
-                            <button class="button button-clear button-small no-margin button-block pull-left">
-                                应 用
-                            </button>
-                        </div>
-                        <div class="col">
-                            <button class="button button-clear button-small no-margin button-block icon-left ion-ios-heart pull-right">
-                                0
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="list card no-margin-bottom">
-
-                    <div class="item item-image">
-                        <img src="http://imgstore.cdn.sogou.com/app/a/100540002//1176913_s_90_2_219x160.jpg">
-                    </div>
-                    <div class="row no-padding">
-                        <div class="col">
-                            <button class="button button-clear button-small no-margin button-block pull-left">
-                                应 用
-                            </button>
-                        </div>
-                        <div class="col">
-                            <button class="button button-clear button-small no-margin button-block icon-left ion-ios-heart pull-right">
-                                0
-                            </button>
-                        </div>
-                    </div>
+                <div class="col">
+                    <button class="button button-clear button-small no-margin button-block icon-left ion-ios-heart pull-right">
+                        0
+                    </button>
                 </div>
             </div>
         </div>

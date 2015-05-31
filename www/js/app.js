@@ -129,6 +129,11 @@ var weatherApp = angular.module('weather', ['ionic', 'ngCordova'])
 				templateUrl: 'templates/user/gallery.html',
 				controller: 'galleryCtr'
 			})
+			.state('shareWeather', {
+				url: '/share-weather/:weatherUrl',
+				templateUrl: 'templates/user/shareWeather.html',
+				controller: 'shareWeatherCtr'
+			})
 			.state('weatherAutoUpdate', {
 				url: '/weather-auto-update',
 				templateUrl: 'templates/setting/weatherAutoUpdate.html',
